@@ -1,0 +1,87 @@
+{
+  "header": {
+    "launch": "Lançamento",
+    "rewards": "Recompensas",
+    "solutions": "Soluções",
+    "demo": "Demonstração",
+    "about": "Sobre",
+    "signUp": "Cadastre-se"
+  },
+  "hero": {
+    "title": "Pagamentos Internacionais em Tempo Real Sem Complicações",
+    "subtitle": "Use seu método de pagamento local preferido em qualquer lugar do mundo. Experimente transações internacionais instantâneas e seguras, impulsionadas pelos principais sistemas de pagamento em tempo real.",
+    "cta": "Comece Agora"
+  },
+  "brazilLaunch": {
+    "title": "Em Breve: PIX nos Estados Unidos",
+    "description": "Temos o orgulho de anunciar nosso lançamento inovador em meados de 2025: permitindo que viajantes brasileiros usem o PIX em todos os Estados Unidos. Isso marca nosso primeiro passo na conexão dos sistemas de pagamento instantâneo mais avançados do mundo.",
+    "feature1": "Pagamentos internacionais instantâneos",
+    "feature2": "Sem taxas de câmbio",
+    "feature3": "Integração perfeita para comerciantes",
+    "cta": "Junte-se à Lista de Espera",
+    "imageAlt": "Mapa de Pagamentos Transfronteiriços das Américas"
+  },
+  "demo": {
+    "title": "Veja a Quartis em Ação",
+    "description": "Experimente o futuro dos pagamentos internacionais com nossa demonstração interativa. Veja como a Quartis permite transações perfeitas usando seu método de pagamento local preferido em qualquer lugar do mundo.",
+    "placeholder": "Espaço Reservado para Demonstração Interativa"
+  },
+  "waitlist": {
+    "title": "Junte-se à Nossa Lista de Espera",
+    "description": "Seja um dos primeiros a experimentar pagamentos instantâneos sem fronteiras com a Quartis. Seja você um comerciante pronto para receber clientes internacionais ou um viajante em busca de pagamentos sem complicações no exterior, inscreva-se agora para transformar sua experiência de pagamento.",
+    "imageAlt": "Fundo abstrato",
+    "formError": "Por favor, preencha todos os campos antes de enviar.",
+    "form": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "accountType": "Tipo de Conta",
+      "accountTypePlaceholder": "Selecione o tipo de conta",
+      "accountTypes": {
+        "merchant": "Comerciante",
+        "client": "Cliente"
+      },
+      "region": "Região",
+      "regionPlaceholder": "Selecione sua região",
+      "submit": "Junte-se à Lista de Espera"
+    },
+    "regions": {
+      "us": "Estados Unidos",
+      "brazil": "Brasil"
+    },
+    "success": {
+      "checkmarkAlt": "Marca de Verificação de Sucesso",
+      "title": "Obrigado!",
+      "message": "Você será notificado assim que nosso serviço estiver disponível em sua localização. Prepare-se para experimentar o futuro dos pagamentos internacionais com seu método de pagamento local preferido.",
+      "cta": "Saiba Mais Sobre a Quartis"
+    }
+  },
+  "about": {
+    "title": "Entendendo Pagamentos Internacionais por Experiência",
+    "subtitle": "Construindo a plataforma de pagamentos que gostaríamos que existisse durante nossa jornada como estudantes internacionais. Chega de cartões recusados, taxas ocultas ou incertezas de pagamento no exterior.",
+    "vision": {
+      "title": "Nossa Visão",
+      "content": "Na Quartis, reconhecemos a mudança inevitável para sistemas de pagamento em tempo real. Com mais de 70% de adoção global e bilhões de transações processadas diariamente através de plataformas como PIX, UPI e SEPA Instant, o futuro dos pagamentos já está aqui. Estamos construindo a infraestrutura para conectar esses sistemas globalmente."
+    },
+    "story": {
+      "title": "Nascido da Experiência Pessoal",
+      "content1": "Como estudantes internacionais do Brasil na UC Berkeley, entendemos em primeira mão os desafios dos pagamentos internacionais. Cada transação recusada, taxa oculta e dor de cabeça com conversão de moeda que experimentamos moldou nossa visão para a Quartis.",
+      "content2": "Estamos unicamente posicionados para resolver este problema porque o vivemos. Nossa conexão com os mercados brasileiro e americano nos dá uma profunda visão sobre como conectar esses ecossistemas de pagamento. Não estamos construindo uma solução teórica - estamos criando a plataforma que gostaríamos que existisse durante nossas próprias viagens."
+    },
+    "mission": {
+      "title": "Construindo Pagamentos Sem Fronteiras",
+      "stats": {
+        "tourists": "Turistas brasileiros nos EUA anualmente",
+        "pixUsers": "Usuários ativos do PIX",
+        "lowerFees": "Taxas mais baixas que cartões"
+      },
+      "content": "Nossa missão vai além de conectar sistemas de pagamento. Estamos pioneirando a integração de métodos de pagamento instantâneo além das fronteiras, ao mesmo tempo que introduzimos recursos inovadores anteriormente exclusivos de cartões de crédito - trazendo programas de recompensas e fidelidade para pagamentos por QR code pela primeira vez."
+    },
+    "beyond": {
+      "title": "Além dos Pagamentos",
+      "content1": "Na Quartis, imaginamos um mundo onde as fronteiras financeiras são coisa do passado. Nosso objetivo não é apenas facilitar pagamentos, mas criar um ecossistema financeiro verdadeiramente global que capacite indivíduos e empresas. Estamos trabalhando para um futuro onde a troca de moedas é simples, o comércio internacional é sem atritos e as oportunidades financeiras são acessíveis a todos, independentemente de sua localização.",
+      "content2": "Com a Quartis, não estamos apenas construindo uma plataforma de pagamento; estamos lançando as bases para uma economia global mais conectada e inclusiva. Ao trazer recompensas de viagem para pagamentos instantâneos, estamos revolucionando não apenas como as pessoas pagam, mas como elas experimentam viagens internacionais como um todo."
+    }
+  }
+}
+

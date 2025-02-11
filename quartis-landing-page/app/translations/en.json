@@ -1,0 +1,87 @@
+{
+  "header": {
+    "launch": "Launch",
+    "rewards": "Rewards",
+    "solutions": "Solutions",
+    "demo": "Demo",
+    "about": "About",
+    "signUp": "Sign Up"
+  },
+  "hero": {
+    "title": "Seamless Cross-Border Real-Time Payments",
+    "subtitle": "Use your preferred local payment method anywhere in the world. Experience instant, secure international transactions powered by leading real-time payment systems.",
+    "cta": "Get Started"
+  },
+  "brazilLaunch": {
+    "title": "Coming Soon: PIX in the United States",
+    "description": "We're proud to announce our groundbreaking launch in mid-2025: enabling Brazilian travelers to use PIX across the United States. This marks our first step in connecting the world's most advanced instant payment systems.",
+    "feature1": "Instant cross-border payments",
+    "feature2": "No currency exchange fees",
+    "feature3": "Seamless integration for merchants",
+    "cta": "Join the Waitlist",
+    "imageAlt": "Americas Cross-border Payments Map"
+  },
+  "demo": {
+    "title": "See Quartis in Action",
+    "description": "Experience the future of cross-border payments with our interactive demo. See how Quartis enables seamless transactions using your preferred local payment method anywhere in the world.",
+    "placeholder": "Interactive Demo Placeholder"
+  },
+  "waitlist": {
+    "title": "Join Our Waitlist",
+    "description": "Be among the first to experience borderless instant payments with Quartis. Whether you're a merchant ready to welcome international customers or a traveler seeking seamless payments abroad, sign up now to transform your payment experience.",
+    "imageAlt": "Abstract background",
+    "formError": "Please fill out all fields before submitting.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "accountType": "Type of Account",
+      "accountTypePlaceholder": "Select account type",
+      "accountTypes": {
+        "merchant": "Merchant",
+        "client": "Client"
+      },
+      "region": "Region",
+      "regionPlaceholder": "Select your region",
+      "submit": "Join Waitlist"
+    },
+    "regions": {
+      "us": "United States",
+      "brazil": "Brazil"
+    },
+    "success": {
+      "checkmarkAlt": "Success Checkmark",
+      "title": "Thank You!",
+      "message": "You will be notified once our service is available in your location. Be ready to experience the future of international payments with your preferred local payment method.",
+      "cta": "Learn More About Quartis"
+    }
+  },
+  "about": {
+    "title": "Understanding Cross-Border Payments From Experience",
+    "subtitle": "Building the payment platform we wished existed during our journey as international students. No more declined cards, hidden fees, or payment uncertainties abroad.",
+    "vision": {
+      "title": "Our Vision",
+      "content": "At Quartis, we recognize the inevitable shift towards real-time payment systems. With over 70% global adoption and billions of transactions processed daily through platforms like PIX, UPI, and SEPA Instant, the future of payments is already here. We're building the infrastructure to connect these systems globally."
+    },
+    "story": {
+      "title": "Born from Personal Experience",
+      "content1": "As international students from Brazil at UC Berkeley, we understand firsthand the challenges of international payments. Every declined transaction, hidden fee, and currency conversion headache we experienced shaped our vision for Quartis.",
+      "content2": "We're uniquely positioned to solve this problem because we live it. Our connection to both Brazilian and US markets gives us deep insight into connecting these payment ecosystems. We're not building a theoretical solution – we're creating the platform we wished existed during our own travels."
+    },
+    "mission": {
+      "title": "Building Borderless Payments",
+      "stats": {
+        "tourists": "Brazilian tourists in US annually",
+        "pixUsers": "Active PIX users",
+        "lowerFees": "Lower fees than cards"
+      },
+      "content": "Our mission goes beyond connecting payment systems. We're pioneering the integration of instant payment methods across borders while introducing innovative features previously exclusive to credit cards - bringing rewards and loyalty programs to QR payments for the first time."
+    },
+    "beyond": {
+      "title": "Beyond Payments",
+      "content1": "At Quartis, we envision a world where financial borders are a thing of the past. Our goal is not just to facilitate payments, but to create a truly global financial ecosystem that empowers individuals and businesses alike. We're working towards a future where currency exchange is seamless, international commerce is frictionless, and financial opportunities are accessible to everyone, regardless of their location.",
+      "content2": "With Quartis, we're not just building a payment platform; we're laying the foundation for a more connected and inclusive global economy. By bringing travel rewards to instant payments, we're revolutionizing not just how people pay, but how they experience international travel altogether."
+    }
+  }
+}
+
