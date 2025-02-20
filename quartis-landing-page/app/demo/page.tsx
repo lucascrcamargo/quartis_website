@@ -2,7 +2,7 @@
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import { useTranslation } from "../hooks/useTranslation"
+import { useTranslation } from "@/app/context/TranslationContext"
 import { motion } from "framer-motion"
 
 export default function DemoPage() {
@@ -12,7 +12,7 @@ export default function DemoPage() {
     <div className="flex flex-col min-h-screen bg-[#1B1C1D]">
       <Header />
       <main className="flex-grow">
-        <section className="min-h-screen flex items-center py-20 px-4 bg-[#1B1C1D] relative">
+        <section className="min-h-screen flex items-center py-20 px-4 bg-[#1B1C1D] relative mt-8">
           <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -25,49 +25,21 @@ export default function DemoPage() {
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">{t("demo.description")}</p>
             </motion.div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="aspect-w-16 aspect-h-9 bg-gray-800 rounded-2xl shadow-2xl overflow-hidden"
-              >
-                <div className="flex items-center justify-center text-gray-500 text-xl">{t("demo.placeholder")}</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative"
-              >
-                <div className="w-[280px] h-[580px] mx-auto bg-gray-800 rounded-[3rem] p-4 relative">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-black rounded-b-2xl" />
-                  <div className="w-full h-full bg-[#1B1C1D] rounded-[2.5rem] overflow-hidden">
-                    {/* Phone Screen Content */}
-                    <div className="relative h-full">
-                      <motion.div
-                        className="absolute inset-0"
-                        animate={{
-                          y: ["0%", "-100%"],
-                        }}
-                        transition={{
-                          duration: 10,
-                          repeat: Number.POSITIVE_INFINITY,
-                          ease: "linear",
-                        }}
-                      >
-                        {/* Payment Flow Animation */}
-                        <div className="h-full flex flex-col items-center justify-center space-y-8 p-6">
-                          <div className="w-full h-32 bg-gradient-to-r from-[#D2AC47]/20 to-[#AE8625]/20 rounded-lg" />
-                          <div className="w-3/4 h-12 bg-gradient-to-r from-[#D2AC47]/20 to-[#AE8625]/20 rounded-lg" />
-                          <div className="w-full h-24 bg-gradient-to-r from-[#D2AC47]/20 to-[#AE8625]/20 rounded-lg" />
-                        </div>
-                      </motion.div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mx-auto w-[640px] h-[413px] rounded-2xl shadow-2xl overflow-hidden"
+            >
+              <iframe
+                width="640"
+                height="413"
+                src="https://www.loom.com/embed/3287a4aa9c8a4966bf17274f26a8ce0b?sid=ea55cb80-ee60-496a-b8de-9a6bbe507396"
+                frameBorder="0"
+                allowFullScreen
+                className="rounded-2xl"
+              ></iframe>
+            </motion.div>
           </div>
         </section>
       </main>

@@ -9,18 +9,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Image from "next/image"
 import Link from "next/link"
 import Header from "../components/Header"
-import { useTranslation } from "../hooks/useTranslation"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 export default function WaitlistPage() {
   const { t } = useTranslation()
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     accountType: "",
     region: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -31,18 +30,98 @@ export default function WaitlistPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (Object.values(formData).every((value) => value !== "")) {
-      console.log("Form submitted:", formData)
-      setIsSubmitted(true)
-      // Here you would typically send the data to your backend
-    } else {
-      alert(t("waitlist.formError"))
+
+    if (!formData.email || !formData.accountType || !formData.region) {
+      alert("Please fill all fields!")
+      return
+    }
+
+    try {
+      setIsLoading(true)
+      // Possibly we had success/failure handling
+      const response = await fetch("https://formspree.io/f/xjkgezbv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          DateCreated: new Date().toISOString(),
+        }),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+      } else {
+        console.error("Formspree submission failed", response)
+        alert("Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error submitting to Formspree:", error)
+      alert("Something went wrong. Please try again.")
+    } finally {
+      setIsLoading(false)
     }
   }
 
   const regions = [t("waitlist.regions.us"), t("waitlist.regions.brazil")]
+
+  if (isSubmitted) {
+    return (
+      <motion.div
+        key="success"
+        className="flex flex-col items-center justify-center min-h-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <div className="text-center max-w-2xl mx-auto px-4">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vecteezy_gold-check-mark-icon-square-gold-certification-seal_32735463-1PHy6xNJmdB71eB8GJORoxS9N3k1xn.png"
+              alt={t("waitlist.success.checkmarkAlt")}
+              width={150}
+              height={150}
+              className="mx-auto mb-8"
+            />
+          </motion.div>
+          <motion.h2
+            className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {t("waitlist.success.title")}
+          </motion.h2>
+          <motion.p
+            className="text-gray-300 text-xl mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {t("waitlist.success.message")}
+          </motion.p>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <Link href="/">
+              <Button className="bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-[#1B1C1D] font-semibold py-3 px-8 text-lg">
+                {t("waitlist.success.cta")}
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </motion.div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#1B1C1D] flex flex-col">
@@ -85,33 +164,13 @@ export default function WaitlistPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-1">
-                        {t("waitlist.form.firstName")}
-                      </label>
-                      <Input
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-gray-900 text-white border-gray-700 focus:border-[#D2AC47]"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-1">
-                        {t("waitlist.form.lastName")}
-                      </label>
-                      <Input
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-gray-900 text-white border-gray-700 focus:border-[#D2AC47]"
-                      />
-                    </div>
+                  <form 
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                    data-netlify="true" 
+                    name="waitlist"
+                  >
+                    <input type="hidden" name="form-name" value="waitlist" />
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                         {t("waitlist.form.email")}
@@ -134,9 +193,9 @@ export default function WaitlistPage() {
                         <SelectTrigger className="w-full bg-gray-900 text-white border-gray-700 focus:border-[#D2AC47]">
                           <SelectValue placeholder={t("waitlist.form.accountTypePlaceholder")} />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="merchant">{t("waitlist.form.accountTypes.merchant")}</SelectItem>
-                          <SelectItem value="client">{t("waitlist.form.accountTypes.client")}</SelectItem>
+                        <SelectContent className="bg-gray-900 border-gray-700">
+                          <SelectItem value="merchant" className="text-white hover:bg-gray-800">{t("waitlist.form.accountTypes.merchant")}</SelectItem>
+                          <SelectItem value="client" className="text-white hover:bg-gray-800">{t("waitlist.form.accountTypes.client")}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -148,9 +207,13 @@ export default function WaitlistPage() {
                         <SelectTrigger className="w-full bg-gray-900 text-white border-gray-700 focus:border-[#D2AC47]">
                           <SelectValue placeholder={t("waitlist.form.regionPlaceholder")} />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-gray-900 border-gray-700">
                           {regions.map((region) => (
-                            <SelectItem key={region} value={region.toLowerCase()}>
+                            <SelectItem 
+                              key={region} 
+                              value={region.toLowerCase()}
+                              className="text-white hover:bg-gray-800"
+                            >
                               {region}
                             </SelectItem>
                           ))}
@@ -159,9 +222,10 @@ export default function WaitlistPage() {
                     </div>
                     <Button
                       type="submit"
+                      disabled={isLoading}
                       className="w-full bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-[#1B1C1D] font-semibold py-4 text-lg"
                     >
-                      {t("waitlist.form.submit")}
+                      {isLoading ? "Submitting..." : t("waitlist.form.submit")}
                     </Button>
                   </form>
                 </motion.div>
@@ -171,7 +235,7 @@ export default function WaitlistPage() {
         ) : (
           <motion.div
             key="success"
-            className="flex-grow flex items-center justify-center"
+            className="flex flex-col items-center justify-center min-h-screen"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

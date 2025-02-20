@@ -13,6 +13,7 @@ import {
   Zap,
   SmilePlus,
 } from "lucide-react"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const merchantBenefits = [
   {
@@ -112,6 +113,8 @@ function BenefitCard({ title, description, icon: Icon, color, index }) {
 }
 
 export default function Benefits() {
+  const { t } = useTranslation()
+
   return (
     <section className="min-h-screen py-32 px-4 bg-[#1B1C1D]">
       <div className="container mx-auto">
@@ -121,7 +124,7 @@ export default function Benefits() {
           transition={{ duration: 0.5 }}
           className="text-6xl font-bold text-center mb-24 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text"
         >
-          Benefits for Everyone
+          {t("benefits.title")}
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-16">
           <div>

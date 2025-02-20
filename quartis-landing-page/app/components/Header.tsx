@@ -2,11 +2,11 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useTranslation } from "../hooks/useTranslation"
+import { useTranslation } from "@/app/context/TranslationContext"
 import { Logo } from "./ui/logo"
 
 export default function Header() {
-  const { t } = useTranslation()
+  const { t, toggleLanguage, currentLang } = useTranslation()
 
   return (
     <header className="fixed w-full z-50 bg-[#1B1C1D] bg-opacity-90 backdrop-blur-sm">
@@ -39,6 +39,12 @@ export default function Header() {
             </Button>
           </Link>
         </div>
+        <button
+          onClick={toggleLanguage}
+          className="ml-4 px-4 py-2 bg-gray-800 text-white rounded-md"
+        >
+          {currentLang === "en" ? "Português (BR)" : "English"}
+        </button>
       </div>
     </header>
   )

@@ -15,12 +15,16 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: [],
   },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: 'export',
+  distDir: 'build',
+  basePath: '/~lucascamargo',
 }
 
 mergeConfig(nextConfig, userConfig)

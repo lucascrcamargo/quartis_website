@@ -82,6 +82,57 @@
       "content1": "At Quartis, we envision a world where financial borders are a thing of the past. Our goal is not just to facilitate payments, but to create a truly global financial ecosystem that empowers individuals and businesses alike. We're working towards a future where currency exchange is seamless, international commerce is frictionless, and financial opportunities are accessible to everyone, regardless of their location.",
       "content2": "With Quartis, we're not just building a payment platform; we're laying the foundation for a more connected and inclusive global economy. By bringing travel rewards to instant payments, we're revolutionizing not just how people pay, but how they experience international travel altogether."
     }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1": {
+      "title": "Scan the Merchant's QR code",
+      "description": "Use your phone to scan the QR code provided by the merchant."
+    },
+    "step2": {
+      "title": "View the amount in BRL",
+      "description": "See the transaction amount converted to your local currency (e.g., Brazilian Real)."
+    },
+    "step3": {
+      "title": "Instant PIX payment",
+      "description": "Confirm and complete the payment using your preferred PIX method."
+    },
+    "step4": {
+      "title": "Merchant receives USD",
+      "description": "The merchant instantly receives the payment in their local currency (e.g., US Dollars)."
+    }
+  },
+  "loyalty": {
+    "title": "Reimagining Travel Rewards",
+    "description": "Experience a new era of travel benefits, tailored for the modern global traveler.",
+    "step1": {
+      "title": "Travel Miles",
+      "description": "Earn miles on every international transaction, redeemable for flights and travel experiences."
+    },
+    "step2": {
+      "title": "Exclusive Rewards",
+      "description": "Unlock premium benefits and experiences tailored to your destination."
+    },
+    "step3": {
+      "title": "Cashback",
+      "description": "Enjoy cashback on your international purchases, credited directly to your account."
+    }
+  },
+  "rtpAdoption": {
+    "title": "The Future of Payments is Here",
+    "description": "Real-Time Payments (RTP) are revolutionizing the global financial landscape. With rapid adoption rates and increasing transaction volumes, RTP systems are becoming the new standard for instant, secure, and efficient money transfers across borders."
+  },
+  "benefits": {
+    "title": "Benefits for Everyone"
+  },
+  "features": {
+    "title": "Quartis Advantages",
+    "description": "Instant conversions, easy merchant integrations, bridging the gap for travelers worldwide, and more..."
+  },
+  "callToAction": {
+    "title": "Transform Your International Transactions",
+    "description": "Join Quartis today and be part of the future where every local payment system connects globally. Whether you're a merchant looking to welcome international customers or a traveler seeking seamless payments abroad, we're building the platform you've been waiting for.",
+    "cta": "Join the Waitlist"
   }
 }
 

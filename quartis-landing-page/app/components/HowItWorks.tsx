@@ -5,6 +5,8 @@ import { QrCode, Coins, Check } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const steps = [
   {
@@ -29,7 +31,12 @@ const steps = [
   },
 ]
 
-function StepIcon({ icon: Icon, index }) {
+interface StepIconProps {
+  icon: React.ComponentType<any> | string;
+  index: number;
+}
+
+function StepIcon({ icon: Icon, index }: StepIconProps) {
   if (Icon === "PIX") {
     return (
       <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#D2AC47] to-[#AE8625] flex items-center justify-center">
@@ -45,6 +52,7 @@ function StepIcon({ icon: Icon, index }) {
 }
 
 export default function HowItWorks() {
+  const { t } = useTranslation()
   const [currentStep, setCurrentStep] = useState(0)
 
   return (
@@ -56,7 +64,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-6xl font-bold text-center mb-24 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text"
         >
-          How It Works
+          {t("howItWorks.title")}
         </motion.h2>
         <div className="flex flex-col md:flex-row gap-16">
           <div className="w-full md:w-2/5">
@@ -76,9 +84,9 @@ export default function HowItWorks() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text">
-                    {step.title}
+                    {t(`howItWorks.step${index + 1}.title`)}
                   </h3>
-                  <p className="text-gray-400">{step.description}</p>
+                  <p className="text-gray-400">{t(`howItWorks.step${index + 1}.description`)}</p>
                 </div>
                 <div
                   className={`w-3 h-3 rounded-full ${
@@ -102,15 +110,19 @@ export default function HowItWorks() {
           </div>
           <div className="w-full md:w-3/5">
             <motion.div
-              className="relative aspect-[9/16] bg-[#252628] rounded-3xl overflow-hidden border border-[#D2AC47] border-opacity-20 max-w-sm mx-auto"
+              className="relative max-w-sm mx-auto h-[600px]"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-6 bg-[#1B1C1D] rounded-b-2xl" />
-              <div className="absolute inset-4 bg-[#1B1C1D] rounded-2xl flex items-center justify-center text-gray-500">
-                Interactive Demo Placeholder
-              </div>
+              <Image
+                src="/~lucascamargo/images/quartis_mobile_platform_sc.png"
+                alt="Quartis Mobile Platform"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="rounded-2xl"
+                priority
+              />
             </motion.div>
           </div>
         </div>

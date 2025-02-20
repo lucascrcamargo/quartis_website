@@ -9,7 +9,7 @@
   },
   "hero": {
     "title": "Pagamentos Internacionais em Tempo Real Sem Complicações",
-    "subtitle": "Use seu método de pagamento local preferido em qualquer lugar do mundo. Experimente transações internacionais instantâneas e seguras, impulsionadas pelos principais sistemas de pagamento em tempo real.",
+    "subtitle": "Use seu método de pagamento local em qualquer lugar do mundo. Experimente transações internacionais instantâneas e seguras, impulsionadas pelos principais sistemas de pagamento instantâneo.",
     "cta": "Comece Agora"
   },
   "brazilLaunch": {
@@ -82,6 +82,57 @@
       "content1": "Na Quartis, imaginamos um mundo onde as fronteiras financeiras são coisa do passado. Nosso objetivo não é apenas facilitar pagamentos, mas criar um ecossistema financeiro verdadeiramente global que capacite indivíduos e empresas. Estamos trabalhando para um futuro onde a troca de moedas é simples, o comércio internacional é sem atritos e as oportunidades financeiras são acessíveis a todos, independentemente de sua localização.",
       "content2": "Com a Quartis, não estamos apenas construindo uma plataforma de pagamento; estamos lançando as bases para uma economia global mais conectada e inclusiva. Ao trazer recompensas de viagem para pagamentos instantâneos, estamos revolucionando não apenas como as pessoas pagam, mas como elas experimentam viagens internacionais como um todo."
     }
+  },
+  "howItWorks": {
+    "title": "Como Funciona",
+    "step1": {
+      "title": "Escaneie o QR code do comerciante",
+      "description": "Use o seu celular para escanear o QR code fornecido pelo comerciante."
+    },
+    "step2": {
+      "title": "Veja o valor em BRL",
+      "description": "Veja o valor da transação convertido para a sua moeda local (por exemplo, Real brasileiro)."
+    },
+    "step3": {
+      "title": "Pagamento PIX instantâneo",
+      "description": "Confirme e conclua o pagamento usando o seu método PIX preferido."
+    },
+    "step4": {
+      "title": "O comerciante recebe em USD",
+      "description": "O comerciante recebe instantaneamente o pagamento na sua moeda local (por exemplo, em Dólares Americanos)."
+    }
+  },
+  "loyalty": {
+    "title": "Redefinindo as Recompensas de Viagem",
+    "description": "Experimente uma nova era de benefícios de viagem, projetados para o viajante global moderno.",
+    "step1": {
+      "title": "Milhas de recompensa",
+      "description": "Receba milhas de recompensa para cada transação que você faz com a Quartis."
+    },
+    "step2": {
+      "title": "Recompensas exclusivas",
+      "description": "Desbloqueie recompensas e benefícios específicos para o seu destino."
+    },
+    "step3": {
+      "title": "Cashback",
+      "description": "Aproveite cashback nas suas compras internacionais direto na sua conta da Quartis."
+    }
+  },
+  "rtpAdoption": {
+    "title": "O Futuro dos Pagamentos Já Chegou",
+    "description": "Os Pagamentos em Tempo Real (RTP) estão revolucionando o cenário financeiro global. Com altas taxas de adoção e volumes de transações crescentes, os sistemas de RTP estão se tornando o novo padrão para transferências de dinheiro instantâneas, seguras e eficientes em todo o mundo."
+  },
+  "benefits": {
+    "title": "Benefícios para Todos"
+  },
+  "features": {
+    "title": "Vantagens do Quartis",
+    "description": "Conversões instantâneas, integrações fáceis com comerciantes, conectando viajantes globalmente, e muito mais..."
+  },
+  "callToAction": {
+    "title": "Transforme suas Transações Internacionais",
+    "description": "Junte-se à Quartis hoje e faça parte do futuro em que cada sistema de pagamento local se conecta globalmente. Seja você um comerciante que deseja receber clientes internacionais ou um viajante em busca de pagamentos sem complicações no exterior, estamos construindo a plataforma que você sempre esperou.",
+    "cta": "Junte-se à Lista de Espera"
   }
 }
 

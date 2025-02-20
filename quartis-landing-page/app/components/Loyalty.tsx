@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Plane, Gift, CreditCard } from "lucide-react"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const benefits = [
   {
@@ -33,6 +34,8 @@ const BenefitCard = ({ icon: Icon, title, description }) => (
 )
 
 export default function Loyalty() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-32 px-4 bg-[#1B1C1D]">
       <div className="container mx-auto">
@@ -43,10 +46,10 @@ export default function Loyalty() {
           className="text-center mb-16"
         >
           <h2 className="text-6xl font-bold mb-4 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text">
-            Reimagining Travel Rewards
+            {t("loyalty.title")}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 font-light">
-            Experience a new era of travel benefits, tailored for the modern global traveler.
+            {t("loyalty.description")}
           </p>
           <div className="inline-block bg-[#D2AC47] text-[#1B1C1D] px-3 py-1 rounded-full text-sm font-semibold mb-4">
             Coming Soon

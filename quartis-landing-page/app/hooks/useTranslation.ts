@@ -1,9 +1,20 @@
 import en from "../translations/en.json"
+import pt from "../translations/pt.json"
 
-export const useTranslation = () => {
+import { useState, useEffect } from "react";
+
+export function useTranslation() {
+  // Add state for the current language, defaulting to English
+  const [currentLang, setCurrentLang] = useState<"en" | "pt">("en");
+
+  // A toggle function to switch between languages
+  function toggleLanguage() {
+    setCurrentLang((prev) => (prev === "en" ? "pt" : "en"));
+  }
+
   const t = (key: string) => {
     const keys = key.split(".")
-    let value: any = en
+    let value: any = currentLang === "en" ? en : pt
 
     for (const k of keys) {
       value = value[k]
@@ -16,6 +27,6 @@ export const useTranslation = () => {
     return value as string
   }
 
-  return { t }
+  return { t, toggleLanguage, currentLang };
 }
 

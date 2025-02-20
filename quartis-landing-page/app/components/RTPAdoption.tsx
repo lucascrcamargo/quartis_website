@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const stats = [
   { value: "2B", label: "Active Users" },
@@ -31,12 +32,13 @@ export default function RTPAdoption() {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1])
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1])
+  const { t } = useTranslation()
 
   return (
     <section ref={ref} className="py-32 px-4 bg-gradient-to-b from-[#1B1C1D] to-[#252628]">
       <motion.div className="container mx-auto" style={{ opacity, scale }}>
         <h2 className="text-6xl font-bold text-center mb-24 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text">
-          The Future of Payments is Here
+          {t("rtpAdoption.title")}
         </h2>
         <div className="flex justify-center items-center gap-8 mb-16 flex-wrap">
           {stats.map((stat, index) => (
@@ -44,9 +46,7 @@ export default function RTPAdoption() {
           ))}
         </div>
         <p className="text-xl text-[#E5E5E5] text-center max-w-3xl mx-auto">
-          Real-Time Payments (RTP) are revolutionizing the global financial landscape. With rapid adoption rates and
-          increasing transaction volumes, RTP systems are becoming the new standard for instant, secure, and efficient
-          money transfers across borders.
+          {t("rtpAdoption.description")}
         </p>
       </motion.div>
     </section>

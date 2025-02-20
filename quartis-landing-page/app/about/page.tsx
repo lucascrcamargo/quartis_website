@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import { useTranslation } from "../hooks/useTranslation"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const ParticleEffect = () => {
   return (
@@ -31,7 +31,7 @@ const ParticleEffect = () => {
   )
 }
 
-const Stats = ({ value, label }) => (
+const Stats = ({ value, label }: { value: string; label: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

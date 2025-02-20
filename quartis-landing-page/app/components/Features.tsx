@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const features = [
   {
@@ -61,17 +62,22 @@ function FeatureCard({ title, description, index }) {
 }
 
 export default function Features() {
+  const { t } = useTranslation()
+
   return (
     <section className="min-h-screen py-32 px-4 bg-[#1B1C1D] relative">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="container mx-auto"
+        className="container mx-auto text-center mb-16"
       >
-        <h2 className="text-6xl font-bold mb-24 text-center bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text">
-          Quartis Advantages
+        <h2 className="text-6xl font-bold mb-4 bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-transparent bg-clip-text">
+          {t("features.title")}
         </h2>
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 font-light">
+          {t("features.description")}
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.slice(0, 3).map((feature, index) => (
             <FeatureCard key={index} {...feature} index={index} />

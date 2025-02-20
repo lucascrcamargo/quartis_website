@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { useTranslation } from "@/app/context/TranslationContext"
 
 const ParticleEffect = () => {
   return (
@@ -31,6 +32,8 @@ const ParticleEffect = () => {
 }
 
 export default function Hero() {
+  const { t } = useTranslation()
+
   return (
     <section className="h-screen flex items-center justify-center bg-[#1B1C1D] relative overflow-hidden">
       <ParticleEffect />
@@ -43,7 +46,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Seamless Cross-Border Real-Time Payments
+          {t("hero.title")}
         </motion.h1>
         <motion.p
           className="text-2xl md:text-3xl mb-12 text-gray-300 max-w-4xl mx-auto font-light"
@@ -51,8 +54,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          Use your preferred local payment method anywhere in the world. Experience instant, secure international
-          transactions powered by leading real-time payment systems.
+          {t("hero.subtitle")}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +63,7 @@ export default function Hero() {
         >
           <Link href="/waitlist">
             <Button className="bg-gradient-to-r from-[#D2AC47] via-[#F7EF8A] to-[#AE8625] text-[#1B1C1D] text-xl font-semibold px-12 py-8">
-              Get Started
+              {t("hero.cta")}
             </Button>
           </Link>
         </motion.div>
